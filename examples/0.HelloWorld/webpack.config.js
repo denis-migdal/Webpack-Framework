@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 
-const {BUILDERS, WebPage} = require('prehtml-loader');
+const {BUILDERS, WebPage} = require('webpack-framework');
 
 // list your builds here.
 module.exports = [
