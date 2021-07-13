@@ -1,0 +1,31 @@
+{
+  "name": "Webpack-Framework",
+  "version": "0.0.0",
+  "description": "Use Webpack without worrying about configurations",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denis-migdal/webpack-framework.git"
+  },
+  "keywords": [
+    "webpack",
+    "framework",
+    "configuration"
+  ],
+  "author": "Denis Migdal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/denis-migdal/webpack-framework/issues"
+  },
+  "homepage": "https://github.com/denis-migdal/webpack-framework#readme",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "jsdom": "^16.1.0",
+    "loader-utils": "^1.2.3"
+  },
+  "devDependencies": {
+    "css-minimizer-webpack-plugin": "^3.0.2",
+    "mini-css-extract-plugin": "^2.1.0"
+  }
+}
