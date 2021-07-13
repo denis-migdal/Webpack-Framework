@@ -10,7 +10,7 @@ module.exports = function(config, {ROOT, src, dst, args, optimize}) {
 	if(optimize)
 		throw 'TODO';
 
-	let prehthml = 'webpack-framework/src/loader.js';
+	let prehthml = 'prehtml-loader';//'webpack-framework/src/loader.js';
 
 	config.module.rules.push({
 		test: /\.html$/,
