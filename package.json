@@ -1,5 +1,5 @@
 {
-  "name": "Webpack-Framework",
+  "name": "webpack-framework",
   "version": "0.0.0",
   "description": "Use Webpack without worrying about configurations",
   "main": "index.js",
