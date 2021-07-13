@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "webpack-framework": "^0.0.1"
+    "webpack-framework": "^0.0.2"
   }
 }
