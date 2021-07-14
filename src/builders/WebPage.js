@@ -2,6 +2,7 @@ const RULES = require('../rules.js');
 const WebPage = require('../WebPage.js');
 
 const DEFAULT_RULES = {
+	ts: RULES.ts,
 	js: RULES.js,
 	css: RULES.css,
 	html: RULES.html,

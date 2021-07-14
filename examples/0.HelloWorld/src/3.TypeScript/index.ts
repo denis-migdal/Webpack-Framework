@@ -1,1 +1,3 @@
-document.querySelector('body').innerText = 'Hello World ! (TypeScript)';
+let message: string = 'Hello World ! (TypeScript)';
+
+document.querySelector('body').innerText = message;

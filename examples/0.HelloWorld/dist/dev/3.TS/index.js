@@ -7,7 +7,6 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/3.TypeScript/index.html?{}":
@@ -16,7 +15,18 @@
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"./dist/dev//somedir2/3.TypeScript/index.html\");\n\n//# sourceURL=webpack://0.helloworld/./src/3.TypeScript/index.html?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"./dist/dev/3.TS/index.html\");\n\n//# sourceURL=webpack://0.helloworld/./src/3.TypeScript/index.html?");
+
+/***/ }),
+
+/***/ "./src/3.TypeScript/index.ts":
+/*!***********************************!*\
+  !*** ./src/3.TypeScript/index.ts ***!
+  \***********************************/
+/***/ (() => {
+
+eval("let message = 'Hello World ! (TypeScript)';\ndocument.querySelector('body').innerText = message;\n\n\n//# sourceURL=webpack://0.helloworld/./src/3.TypeScript/index.ts?");
 
 /***/ }),
 
@@ -26,6 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://0.helloworld/./src/3.TypeScript/index.css?");
 
 /***/ })
@@ -74,6 +85,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	__webpack_modules__["./src/3.TypeScript/index.ts"](0, {}, __webpack_require__);
 /******/ 	__webpack_modules__["./src/3.TypeScript/index.css"](0, {}, __webpack_require__);
 /******/ 	var __webpack_exports__ = {};
 /******/ 	__webpack_modules__["./src/3.TypeScript/index.html?{}"](0, __webpack_exports__, __webpack_require__);

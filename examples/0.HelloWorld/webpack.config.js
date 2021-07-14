@@ -32,8 +32,6 @@ module.exports = [
 	})
 ];
 
-//rename
-
 // optimize (TODO)
 
 // TODO: TEMPLATES options (HTML-LOADER)
