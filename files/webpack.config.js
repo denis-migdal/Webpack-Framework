@@ -1,3 +1,3 @@
 const WF = require("./build/WebpackFramework");
 
-module.exports = (env, argv) => WF.buildConfigs();
+module.exports = async (env, argv) => await WF.buildConfigs();

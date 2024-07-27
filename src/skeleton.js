@@ -61,7 +61,7 @@ module.exports = function (src, dst, rules = [], options = {}) {
 	};
 
 	for(let rule of rules)
-		rule(config, src, options);
+		rule(config, src, dst, options);
 
 	//if(assets)
 	//	copyAssets(config, assets);

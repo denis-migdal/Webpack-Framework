@@ -1,12 +1,15 @@
-/*let RULES = require('./src/rules.js');
-let BUILDERS = require('./src/builders.js');
+let RULES = require('./src/rules');
+/*let BUILDERS = require('./src/builders.js');
 
 let WebPage = require('./src/WebPage.js');*/
 
 const skeleton = require('./src/skeleton');
 
-function buildConfigs() {
-    return skeleton("./src/", "./dst"); //TODO: named target.
+async function buildConfigs() { //TODO: multiple named target.
+
+    const rules = [RULES.Markdown]; //TODO: auto build.
+
+    return skeleton("./src/", "./dist", rules);
 }
 
 module.exports = {

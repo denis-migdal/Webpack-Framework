@@ -38,3 +38,4 @@ module.exports = (env, argv) => WF.buildConfigs();
 
 - [ ] Test on personal projects
 - [ ] Add examples
+- [ ] Only install required deps depending on the project...
