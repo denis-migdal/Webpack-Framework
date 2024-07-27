@@ -22,6 +22,18 @@
    `./build/WebpackFramework/init.sh`
 4. Complete informations in `package.json`.<br/>
 
+### Configuration
+
+Webpack is configured through `webpack.config.js`. You can easily use WebpackFramework default configuration:
+
+```javascript
+const WF = require("./build/WebpackFramework");
+
+module.exports = (env, argv) => WF.buildConfigs();
+```
+
+⚠ For now, WebpackFramework only supports this default configuration. `WF.buildConfigs()` should be extended in the future to allow for more configuration options.
+
 ## TODOLIST
 
 - [ ] Test on personal projects
