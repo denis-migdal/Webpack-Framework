@@ -1,51 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Example</title><link rel="stylesheet" href="../../node_modules/highlight.js/styles/1c-light.min.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            print-color-adjust:exact;
-            background-color: grey;
-            position: relative;
-        }
-        main {
-            overflow-x: hidden;
-            position: absolute;
-            top: 0;
-            /*overflow: hidden;*/
-            width: 210mm;
-            background-color: white;
-            & > section {
-                width: 210mm;
-                height: 148mm;
-                overflow-y: scroll;
-                /*background-color: blue;*/
-                border: 1px solid black; /* red */
-                box-sizing: border-box;
-            }
-        }
-        @media screen {
-            body {
-                overflow: hidden;
-            }
-            main {
-                right: 0;
-                transform-origin: top right;
-                scale: var(--scale);
-                height: 148mm;
-            }
-        }
-        @media print {
-            main > section {
-                border: 1px solid white;
-            }
-        }
-        @page {
-            size: A5 landscape;
-        }
-    </style>
+    <title>Example</title>
+    <link rel="stylesheet" href="../../node_modules/highlight.js/styles/1c-light.min.css">
+    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
 Z

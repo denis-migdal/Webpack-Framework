@@ -1,8 +1,8 @@
 //TODO: fix path...
 
 // highlight
-const { markedHighlight } = require("./../../example/node_modules/marked-highlight");
-const hljs = require('./../../example/node_modules/highlight.js');
+const { markedHighlight } = require("marked-highlight");
+const hljs = require('highlight.js');
 
 module.exports = function(config, src) {
 
