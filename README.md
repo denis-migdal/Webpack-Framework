@@ -15,7 +15,7 @@
 1. Create your new repository:<br/>
    `git init` or `git clone ... && cd ...`
 2. Add Webpack-Framework:<br/>
-   `mkdir ./build && git submodules add git@github.com:denis-migdal/Webpack-Framework.git ./build/WebpackFramework`<br/>
+   `git submodule add git@github.com:denis-migdal/Webpack-Framework.git ./build/WebpackFramework`<br/>
    💡 Alternatively, you can also use a symbolic link :<br/>
    `mkdir ./build && ln -s ... ./build/WebpackFramework`
 3. Initialize the new repository:<br/>
