@@ -22,6 +22,30 @@
    `./build/WebpackFramework/init.sh`
 4. Complete informations in `package.json`.<br/>
 
+⚠ markdown-loader is currently bugged, `markdown-loader/src/loader.js` needs to be :
+
+```javascript
+/* eslint-disable @babel/no-invalid-this */
+import {parse, use} from "marked";
+
+const extensions = [];
+
+export function markdownLoader(markdown) {
+  const options = this.getOptions();
+
+  for(let extension of options.extensions) {
+    if( extensions.includes(extension) )
+      break;
+
+    use(extension);
+    extensions.push(extension);
+  }
+
+  return parse(markdown, options.options);
+}
+```
+
+
 ### Configuration
 
 Webpack is configured through `webpack.config.js`. You can easily use WebpackFramework default configuration:

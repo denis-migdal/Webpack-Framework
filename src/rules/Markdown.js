@@ -1,3 +1,8 @@
+//TODO: fix path...
+
+// highlight
+const { markedHighlight } = require("./../../example/node_modules/marked-highlight");
+const hljs = require('./../../example/node_modules/highlight.js');
 
 module.exports = function(config, src) {
 
@@ -12,6 +17,16 @@ module.exports = function(config, src) {
             {
                 loader: "markdown-loader",
                 options: { // https://marked.js.org/using_advanced#options
+                    options: {},
+                    extensions: [
+                        markedHighlight({
+                            langPrefix: 'hljs language-',
+                            highlight(code, lang, info) {
+                                const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                                return hljs.highlight(code, { language }).value;
+                            }
+                        })
+                    ]
                 },
             },
         ],

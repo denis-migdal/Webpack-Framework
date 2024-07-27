@@ -1,12 +1,130 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Example</title>
+    <title>Example</title><link rel="stylesheet" href="../../node_modules/highlight.js/styles/1c-light.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            print-color-adjust:exact;
+            background-color: grey;
+            position: relative;
+        }
+        main {
+            overflow-x: hidden;
+            position: absolute;
+            top: 0;
+            /*overflow: hidden;*/
+            width: 210mm;
+            background-color: white;
+            & > section {
+                width: 210mm;
+                height: 148mm;
+                overflow-y: scroll;
+                /*background-color: blue;*/
+                border: 1px solid black; /* red */
+                box-sizing: border-box;
+            }
+        }
+        @media screen {
+            body {
+                overflow: hidden;
+            }
+            main {
+                right: 0;
+                transform-origin: top right;
+                scale: var(--scale);
+                height: 148mm;
+            }
+        }
+        @media print {
+            main > section {
+                border: 1px solid white;
+            }
+        }
+        @page {
+            size: A5 landscape;
+        }
+    </style>
 </head>
 <body>
+Z
+<main>
+<section>
 
-<h1 id="example">Example</h1>
+<pre><code class="hljs language-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> TOTO <span class="hljs-keyword">WHERE</span> X <span class="hljs-operator">=</span> <span class="hljs-number">2</span>;
+</code></pre></section>
+<section>A</section>
+<section>
+
+<p>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZYXWVTSRQPO_NMLKJIHGFEDCBA9876543210BCDEFGHIJKL</p>
 <h2 id="hi-">Hi ;)</h2>
+<h2 id="hi--1">Hi ;)</h2>
+<h2 id="hi--2">Hi ;)</h2>
+<h2 id="hi--3">Hi ;)</h2>
+<h2 id="hi--4">Hi ;)</h2>
+<h2 id="hi--5">Hi ;)</h2>
+<h2 id="hi--6">Hi ;)</h2>
+<h2 id="hi--7">Hi ;)</h2>
+<h2 id="hi--8">Hi ;)</h2>
+<h2 id="hi--9">Hi ;)</h2>
+<h2 id="hi--10">Hi ;)</h2>
+<h2 id="hi--11">Hi ;)</h2>
+<h2 id="hi--12">Hi ;)</h2>
+<h2 id="hi--13">Hi ;)</h2>
+<h2 id="hi--14">Hi ;)</h2>
+<h2 id="hi--15">Hi ;)</h2>
+<h2 id="hi--16">Hi ;)</h2>
+<h2 id="hi--17">Hi ;)</h2>
+<h2 id="hi--18">Hi ;)</h2>
+<h2 id="hi--19">Hi ;)</h2>
+<h2 id="hi--20">Hi ;)</h2>
+<h2 id="hi--21">Hi ;)</h2>
+<h2 id="hi--22">Hi ;)</h2>
+<h2 id="hi--23">Hi ;)</h2>
+<h2 id="hi--24">Hi ;)</h2>
+<h2 id="hi--25">Hi ;)</h2>
+<h2 id="hi--26">Hi ;)</h2>
+<h2 id="hi--27">Hi ;)</h2>
+<h2 id="hi--28">Hi ;)</h2>
+<h2 id="hi--29">Hi ;)</h2>
+<p>A</section><section>B</section></p>
+<h2 id="hi--30">Hi ;)</h2>
+<h2 id="hi--31">Hi ;)</h2>
+<h2 id="hi--32">Hi ;)</h2>
+<h2 id="hi--33">Hi ;)</h2>
+<h2 id="hi--34">Hi ;)</h2>
+<h2 id="hi--35">Hi ;)</h2>
+<h2 id="hi--36">Hi ;)</h2>
+<h2 id="hi--37">Hi ;)</h2>
+<h2 id="hi--38">Hi ;)</h2>
+</main>
 </body>
+
+<script><!-- TODO -->
+    const main = document.querySelector("main");
+
+    // fit page height
+    const vh = document.documentElement.clientHeight; // without scrollbar
+    const mh = main.clientHeight; // height: 148mm
+    main.style.setProperty("--scale", `${vh/mh}`);
+
+    // change slide
+    let frames = [...document.querySelectorAll('section')];
+    let current = 0;
+    document.addEventListener("keyup", (ev) => {
+
+        if( ev.code=== "ArrowLeft"  && current !== 0)
+            --current;
+        if( ev.code=== "ArrowRight" && current !== frames.length - 1 )
+            ++current;
+
+        console.warn("called", current * mh);
+        main.scrollTo({
+            top: frames[current].offsetTop,
+            behavior: "instant",
+        });
+    });
+</script>
 
 </html>
