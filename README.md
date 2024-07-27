@@ -58,6 +58,12 @@ module.exports = (env, argv) => WF.buildConfigs();
 
 ⚠ For now, WebpackFramework only supports this default configuration. `WF.buildConfigs()` should be extended in the future to allow for more configuration options.
 
+## Projects using WebpackFramework
+
+### My projects
+
+- https://github.com/denis-migdal/WebSlides/tree/master/example
+
 ## TODOLIST
 
 - [ ] Test on personal projects
