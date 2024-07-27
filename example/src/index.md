@@ -7,7 +7,6 @@
     <script src="./index.js" type="module" defer></script>
 </head>
 <body>
-Z
 <main>
 <section>
 
