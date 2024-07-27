@@ -41,7 +41,7 @@ module.exports = function (src, dst, rules = [], options = {}) {
 		//watch: WATCH, no needs (--watch / --no-watch)
 		watchOptions: {
 			ignored: [	'**/node_modules',
-						'**/.git',
+						'**/.git'
                         /*
 						`${__dirname}/../build`,
 						`${__dirname}/../dist`,

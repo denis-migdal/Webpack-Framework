@@ -10,7 +10,7 @@ module.exports = function(config, src, {workers} = {}) {
 				//loader: 'ts-loader',
 				options: {
 					jsc: {
-						"target": "esnext",
+						"target": "esnext"
 					}
 					//transpileOnly: true, // Build time : 20sec to 10sec...
 					//experimentalWatchApi: true,
