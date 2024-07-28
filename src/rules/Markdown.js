@@ -4,6 +4,8 @@
 const { markedHighlight } = require("marked-highlight");
 const hljs = require('highlight.js');
 
+const fs = require('fs');
+
 module.exports = function(config, src) {
 
 	config.module.rules.push({
@@ -32,5 +34,7 @@ module.exports = function(config, src) {
         ],
 	});
 
-	config.entry.main.push( `${src}/index.md` );
+    const entry_file = `${src}/index.md`;
+	if( fs.existsSync(entry_file) )
+        config.entry.main.push( entry_file );
 };

@@ -7,7 +7,7 @@ const skeleton = require('./src/skeleton');
 
 async function buildConfigs() { //TODO: multiple named target.
 
-    const rules = [RULES.Typescript, RULES.Images, RULES.CSS, RULES.Markdown]; //TODO: auto build.
+    const rules = [RULES.Typescript, RULES.Images, RULES.CSS, RULES.HTML, RULES.Markdown]; //TODO: auto build.
 
     return skeleton("./src/", "./dist", rules);
 }

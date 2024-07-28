@@ -13,6 +13,7 @@ module.exports = function (src, dst, rules = [], options = {}) {
 	dst = `${dst}/${prod}`;
 
 	let ROOT = process.cwd();
+	options.ROOT = ROOT;
 
 	let config = {
 		module: {
