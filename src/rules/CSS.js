@@ -2,9 +2,23 @@
 //TODO... fix path...
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const {globSync} = require('glob');
+
+const fs = require('fs');
+
 module.exports = function (config, src, dst) {
 
-    config.entry.main.push(`${src}/index.css`);
+
+    const entry_file = `${src}/index.css`;
+	if( fs.existsSync(entry_file) )
+    	(config.entry.main ??= []).push(entry_file);
+
+    const files = globSync(src + '/pages/**/index.css');
+    for(let file of files) {
+        const entry_file = file.slice(src.length - 2);
+		const entry_name = entry_file.slice(0, - "index.css".length);
+        (config.entry[entry_name] ??= []).push( entry_file );
+    }
 
 	/*
 	let css_purge = {
@@ -24,7 +38,9 @@ module.exports = function (config, src, dst) {
         ]
 	});
 
-	config.plugins.push(new MiniCssExtractPlugin({filename: `index.css`}) );
+	config.plugins.push(new MiniCssExtractPlugin({
+		filename: ({chunk}) => { return `${chunk.name}/index.css` }
+	}) );
 
 	/*if( optimize ) {
 

@@ -16,5 +16,5 @@ module.exports = function(config, src) {
     
     const entry_file = `${src}/index.html`;
 	if( fs.existsSync(entry_file) )
-        config.entry.main.push( entry_file );
+        (config.entry.main ??= []).push( entry_file );
 };

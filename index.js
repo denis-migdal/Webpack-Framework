@@ -9,7 +9,11 @@ async function buildConfigs() { //TODO: multiple named target.
 
     const rules = [RULES.Typescript, RULES.Images, RULES.CSS, RULES.HTML, RULES.Markdown]; //TODO: auto build.
 
-    return skeleton("./src/", "./dist", rules);
+    const config = skeleton("./src/", "./dist", rules);
+
+    //console.log(JSON.stringify(config, null, "\t"));
+
+    return config;
 }
 
 module.exports = {

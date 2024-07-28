@@ -19,9 +19,7 @@ module.exports = function (src, dst, rules = [], options = {}) {
 		module: {
 			rules: [],
 		},
-		entry: {
-			main: [],
-		},
+		entry: {},
 		output: {
 			path: `${ROOT}/${dst}`,
 			publicPath: '',
