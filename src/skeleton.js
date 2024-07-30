@@ -1,4 +1,4 @@
-//const copyAssets = require('./copyAssets');
+const copyAssets = require('./copyAssets');
 //const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 //const genCoreModuleList  = require('./genCoreModuleList');
 //const genCoreRuntimeList = require('./genCoreRuntimeList');
@@ -62,8 +62,8 @@ module.exports = function (src, dst, rules = [], options = {}) {
 	for(let rule of rules)
 		rule(config, src, dst, options);
 
-	//if(assets)
-	//	copyAssets(config, assets);
+	if(assets)
+		copyAssets(config, assets);
 
 	return config;
 	//return smp.wrap( config );
