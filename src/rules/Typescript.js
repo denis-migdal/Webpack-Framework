@@ -48,6 +48,7 @@ module.exports = function(config, src, {workers} = {}) {
 		extensions: ['.tsx', '.ts', '.js'],
 		modules: [
 			src,
+			`./libs/`,
 			'./node_modules',
 		],
 		alias: {},
