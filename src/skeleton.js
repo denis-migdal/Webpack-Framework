@@ -56,7 +56,7 @@ module.exports = function (src, dst, rules = [], options = {}) {
 		devtool: "inline-source-map", //"source-map"
 		stats: {
  			"errorDetails": true
-		},
+		}
 	};
 
 	for(let rule of rules)
