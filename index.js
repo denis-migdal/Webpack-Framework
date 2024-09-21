@@ -19,6 +19,8 @@ async function buildConfigs() { //TODO: multiple named target.
         assets
     });
 
+    console.warn(config);
+
     //console.log(JSON.stringify(config, null, "\t"));
 
     return config;
