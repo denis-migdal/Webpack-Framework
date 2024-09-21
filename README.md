@@ -64,8 +64,12 @@ module.exports = (env, argv) => WF.buildConfigs();
 
 - https://github.com/denis-migdal/WebSlides/tree/master/example
 
+## Known bugs
+
+- [ ] in some projects, /dist/src junks are generated, dunno why.
+
+
 ## TODOLIST
 
-- [ ] Test on personal projects
 - [ ] Add examples
 - [ ] Only install required deps depending on the project...
