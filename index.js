@@ -7,7 +7,7 @@ let WebPage = require('./src/WebPage.js');*/
 
 const skeleton = require('./src/skeleton');
 
-async function buildConfigs() { //TODO: multiple named target.
+async function buildConfigs(env, args) { //TODO: multiple named target.
 
     const rules = [RULES.Typescript, RULES.Images, RULES.CSS, RULES.HTML, RULES.Markdown]; //TODO: auto build.
 
@@ -16,11 +16,11 @@ async function buildConfigs() { //TODO: multiple named target.
         assets.push([`./src/assets`, "./assets"]);
 
     const config = skeleton("./src/", "./dist", rules, {
-        assets
+        assets,
+        mode: args.mode
     });
 
-    console.warn(config);
-
+    //console.warn(config);
     //console.log(JSON.stringify(config, null, "\t"));
 
     return config;

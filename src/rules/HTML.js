@@ -14,9 +14,6 @@ module.exports = function(config, src) {
         (config.entry[entry_name] ??= []).push( entry_file );
     }
 
-    console.warn(files);
-
-
 	config.module.rules.push({
 		test: /\.html$/,
 		use: [

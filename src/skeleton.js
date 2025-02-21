@@ -5,12 +5,12 @@ const copyAssets = require('./copyAssets');
 
 module.exports = function (src, dst, rules = [], options = {}) {
 
-	let {assets, production} = options;
+	let {assets, mode} = options;
 
-	let prod = production ? 'prod' : 'dev';
-	console.log('Build mode:', prod);
+	let version = mode === "production" ? 'prod' : 'dev';
+	console.log('=== Building version:', version, "===");
 
-	dst = `${dst}/${prod}`;
+	dst = `${dst}/${version}`;
 
 	let ROOT = process.cwd();
 	options.ROOT = ROOT;
