@@ -53,7 +53,7 @@ module.exports = function (src, dst, rules = [], options = {}) {
 						`${__dirname}/../tsconfig.json`,
 						`${__dirname}/../webpack.config.js`*/]
 		},
-		devtool: "inline-source-map", //"source-map"
+		devtool: "source-map", //"source-map"
 		stats: {
  			"errorDetails": true
 		}
