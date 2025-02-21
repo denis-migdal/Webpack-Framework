@@ -16,7 +16,7 @@ module.exports = function (config, src, dst) {
     const files = globSync(src + '/pages/**/index.css');
     for(let file of files) {
         const entry_file = file.slice(src.length - 2);
-		const entry_name = entry_file.slice(0, - "index.css".length);
+		const entry_name = entry_file.slice(6, - "index.css".length);
         (config.entry[entry_name] ??= []).push( entry_file );
     }
 

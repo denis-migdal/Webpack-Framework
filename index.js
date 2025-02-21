@@ -7,23 +7,33 @@ let WebPage = require('./src/WebPage.js');*/
 
 const skeleton = require('./src/skeleton');
 
-async function buildConfigs(env, args) { //TODO: multiple named target.
+function buildConfigs(src, dst) { //TODO: multiple named target.
 
-    const rules = [RULES.Typescript, RULES.Images, RULES.CSS, RULES.HTML, RULES.Markdown]; //TODO: auto build.
+    return (env, args) => {
 
-    const assets = [];
-    if( fs.existsSync(`./src/assets`) )
-        assets.push([`./src/assets`, "./assets"]);
+        const rules = [RULES.Typescript, RULES.Images, RULES.CSS, RULES.HTML, RULES.Markdown]; //TODO: auto build.
 
-    const config = skeleton("./src/", "./dist", rules, {
-        assets,
-        mode: args.mode
-    });
+        const assets = [];
+        if( fs.existsSync(`${src}/assets`) )
+            assets.push([`${src}/assets`, "./assets"]);
 
-    //console.warn(config);
-    //console.log(JSON.stringify(config, null, "\t"));
+        let version = args.mode === "production" ? 'prod' : 'dev';
+        console.log('=== Building version:', version, "===");
 
-    return config;
+        dst = dst.replaceAll("${version}", version);
+        // TODO: if dst not given ?
+        //	dst = `${dst}/${version}`;
+
+        const config = skeleton(src, dst, rules, {
+            assets,
+            mode: args.mode
+        });
+
+        //console.warn(config);
+        //console.log(JSON.stringify(config, null, "\t"));
+
+        return config;
+    }
 }
 
 module.exports = {

@@ -10,7 +10,7 @@ module.exports = function(config, src) {
     const files = globSync(src + '/pages/**/index.html');
     for(let file of files) {
         const entry_file = file.slice(src.length - 2);
-		const entry_name = entry_file.slice(0, - "index.html".length);
+		const entry_name = entry_file.slice(6, - "index.html".length);
         (config.entry[entry_name] ??= []).push( entry_file );
     }
 
@@ -28,7 +28,7 @@ module.exports = function(config, src) {
                             filepath = "/home/demigda/Data/Recherche/Git/Cours/src/pages/TPEngine/index.html";
 
                         const idx = filepath.indexOf(src.slice(1));
-                        return filepath.slice(idx + src.length - 1);
+                        return filepath.slice(idx + src.length + 6 - 1);
                     }
                 }
             }

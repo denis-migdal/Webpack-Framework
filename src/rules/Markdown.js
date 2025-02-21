@@ -15,7 +15,7 @@ module.exports = function(config, src) {
     const files = globSync(src + '/pages/**/index.md');
     for(let file of files) {
         const entry_file = file.slice(src.length - 2);
-		const entry_name = entry_file.slice(0, - "index.md".length);
+		const entry_name = entry_file.slice(6, - "index.md".length);
         (config.entry[entry_name] ??= []).push( entry_file );
     }
 
@@ -28,8 +28,8 @@ module.exports = function(config, src) {
                 loader: 'file-loader',
 			    options: {
                     name: (filepath) => {
-                        const idx = filepath.indexOf(src.slice(1))
-                        return filepath.slice(idx + src.length - 1, -2 ) + "html";
+                        const idx = filepath.indexOf(src.slice(1));
+                        return filepath.slice(idx + src.length + 6 - 1, -2 ) + "html";
                     }
                 }
             },

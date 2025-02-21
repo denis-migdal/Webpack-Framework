@@ -7,11 +7,6 @@ module.exports = function (src, dst, rules = [], options = {}) {
 
 	let {assets, mode} = options;
 
-	let version = mode === "production" ? 'prod' : 'dev';
-	console.log('=== Building version:', version, "===");
-
-	dst = `${dst}/${version}`;
-
 	let ROOT = process.cwd();
 	options.ROOT = ROOT;
 

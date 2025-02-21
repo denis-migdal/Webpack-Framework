@@ -14,7 +14,7 @@ module.exports = function(config, src, {workers} = {}) {
 	
     for(let file of files) {
         const entry_file = file.slice(src.length - 2);
-		const entry_name = entry_file.slice(0, - "index.ts".length);
+		const entry_name = entry_file.slice(6, - "index.ts".length);
 		(config.entry[entry_name] ??= []).push( entry_file );
     }
 
