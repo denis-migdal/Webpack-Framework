@@ -1,4 +1,5 @@
 const copyAssets = require('./copyAssets');
+const pageEntries = require('./entries');
 //const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 //const genCoreModuleList  = require('./genCoreModuleList');
 //const genCoreRuntimeList = require('./genCoreRuntimeList');
@@ -14,10 +15,11 @@ module.exports = function (src, dst, rules = [], options = {}) {
 		module: {
 			rules: [],
 		},
-		entry: {},
+		entry: pageEntries(src, dst),
 		output: {
 			path: `${ROOT}/${dst}`,
 			publicPath: '',
+			enabledLibraryTypes: ["module", "modern-module", "umd"],
 			clean: {
 				//dry: true
 			},

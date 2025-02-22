@@ -1,32 +1,18 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
 
-const fs = require('fs');
-const {globSync} = require('glob');
-
 module.exports = function(config, src, {workers} = {}) {
-
-    const entry_file = `${src}/index.ts`;
-	if( fs.existsSync(entry_file) )
-		(config.entry.main ??= []).push( entry_file );
-
-	const files = globSync(src + '/pages/**/index.ts');
-	
-    for(let file of files) {
-        const entry_file = file.slice(src.length - 2);
-		const entry_name = entry_file.slice(6, - "index.ts".length);
-		(config.entry[entry_name] ??= []).push( entry_file );
-    }
 
 	config.module.rules.push({
 		test: /\.tsx?$/,
 		use: [{
+				// awesome-typescript-loader ?
 				loader: 'swc-loader',
 				//loader: 'ts-loader',
 				options: {
 					jsc: {
-						"target": "esnext"
-					}
+						"target": "esnext",
+					},
 					//transpileOnly: true, // Build time : 20sec to 10sec...
 					//experimentalWatchApi: true,
 				},
@@ -65,15 +51,14 @@ module.exports = function(config, src, {workers} = {}) {
 		config.entry[`${WORKER_PREFIX}${worker_name}`] = workers[worker_name][0];
 	}*/
 
-	config.output.library = {
-		type: "module" // TODO
-	}
 	config.experiments = {
 		outputModule: true
 	}
 
-	config.output.filename = ({runtime}) => {
+	config.output.filename = (args) => {
 		
+		const runtime = args.chunk.name;
+
 		if( runtime === "main" )
 			return `index.js`;
 

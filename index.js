@@ -14,7 +14,7 @@ function buildConfigs(src, dst) { //TODO: multiple named target.
 
         const version = args.mode === "production" ? 'prod' : 'dev';
         console.log('=== Building version:', version, "===");
-        
+
         dst = dst.replaceAll("${version}", version);
 
         const assets = [];
