@@ -6,23 +6,23 @@ const fs  = require('fs');
 let WebPage = require('./src/WebPage.js');*/
 
 const skeleton = require('./src/skeleton');
+const rules = [RULES.Typescript, RULES.Images, RULES.CSS, RULES.HTML, RULES.Markdown]; //TODO: auto build.
 
 function buildConfigs(src, dst) { //TODO: multiple named target.
 
     return (env, args) => {
 
-        const rules = [RULES.Typescript, RULES.Images, RULES.CSS, RULES.HTML, RULES.Markdown]; //TODO: auto build.
+        const version = args.mode === "production" ? 'prod' : 'dev';
+        console.log('=== Building version:', version, "===");
+        
+        dst = dst.replaceAll("${version}", version);
 
         const assets = [];
         if( fs.existsSync(`${src}/assets`) )
             assets.push([`${src}/assets`, "./assets"]);
 
-        let version = args.mode === "production" ? 'prod' : 'dev';
-        console.log('=== Building version:', version, "===");
-
-        dst = dst.replaceAll("${version}", version);
-        // TODO: if dst not given ?
-        //	dst = `${dst}/${version}`;
+        if( fs.existsSync(`${src}/pages/404.html`) )
+            assets.push([`${src}/pages/404.html`, "../404.html"]);
 
         const config = skeleton(src, dst, rules, {
             assets,
