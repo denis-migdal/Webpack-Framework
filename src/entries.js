@@ -20,7 +20,7 @@ module.exports = function(src) {
             if(entry === undefined) {
                 entry = entries[entry_name]= { import: []};
                 if( ! entry_name.startsWith("skeleton") )
-                    entry.dependOn = ["skeleton/liss"]
+                    entry.dependOn = ["skeleton"]
             }
             entry.import.push(file);
         }
