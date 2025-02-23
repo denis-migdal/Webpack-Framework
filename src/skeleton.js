@@ -6,7 +6,7 @@ const pageEntries = require('./entries');
 
 module.exports = function (src, dst, rules = [], options = {}) {
 
-	let {assets, mode} = options;
+	let {assets} = options;
 
 	let ROOT = process.cwd();
 	options.ROOT = ROOT;

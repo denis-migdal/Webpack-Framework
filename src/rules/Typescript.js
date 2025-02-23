@@ -1,7 +1,7 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
 
-module.exports = function(config, src, {workers} = {}) {
+module.exports = function(config, src, _, {ROOT}) {
 
 	config.module.rules.push({
 		test: /\.tsx?$/,
@@ -27,20 +27,21 @@ module.exports = function(config, src, {workers} = {}) {
 				mode: 'write-references',
 			}
 		}),
-		new ForkTsCheckerNotifierWebpackPlugin({ excludeWarnings: true }),
+		new ForkTsCheckerNotifierWebpackPlugin({ excludeWarnings: false }),
 	);
 
 	config.resolve = {
 		extensions: ['.tsx', '.ts', '.js'],
 		modules: [
-			src,
-			`./libs/`,
-			'./node_modules',
+			ROOT,
+			'node_modules',
 		],
-		alias: {},
+		alias: {
+			"@LISS": "V3/"
+		},
 		fallback: {
-            "fs": false,
-            "path": false,
+            "fs"    : false,
+            "path"  : false,
             "crypto": false
         },
 	}
@@ -67,4 +68,7 @@ module.exports = function(config, src, {workers} = {}) {
 		//let worker_name = runtime.slice(WORKER_PREFIX.length);
 		//return `${workers[worker_name][1]}/index.js`;
 	}
+
+	//TODO: .d.ts bundle
+
 };
