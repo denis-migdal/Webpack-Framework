@@ -21,8 +21,10 @@ function buildConfigs(src, dst, alias) { //TODO: multiple named target.
         if( fs.existsSync(`${src}/assets`) )
             assets.push([`${src}/assets`, "./assets"]);
 
-        if( fs.existsSync(`${src}/pages/404.html`) )
-            assets.push([`${src}/pages/404.html`, "../404.html"]);
+        if( fs.existsSync(`${src}/pages/404.html`) ) {
+            const prefix = src.includes('V3') ? '..' : '.';
+            assets.push([`${src}/pages/404.html`, `${prefix}/404.html`]);
+        }
 
         const config = skeleton(src, dst, rules, {
             assets,
