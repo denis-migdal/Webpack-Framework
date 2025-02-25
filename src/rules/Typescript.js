@@ -1,7 +1,7 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
 
-module.exports = function(config, src, _, {ROOT}) {
+module.exports = function(config, src, _, {ROOT, alias}) {
 
 	config.module.rules.push({
 		test: /\.tsx?$/,
@@ -36,9 +36,7 @@ module.exports = function(config, src, _, {ROOT}) {
 			ROOT,
 			'node_modules',
 		],
-		alias: {
-			"@LISS": "V3/"
-		},
+		alias,
 		fallback: {
             "fs"    : false,
             "path"  : false,
