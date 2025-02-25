@@ -53,6 +53,9 @@ module.exports = function (src, dst, rules = [], options = {}) {
 		devtool: "source-map", //"source-map"
 		stats: {
  			"errorDetails": true
+		},
+		optimization: {
+			providedExports: false // else causes issues...
 		}
 	};
 
