@@ -1,8 +1,8 @@
 /* const CssMinimizerPlugin = require('css-minimizer-webpack-plugin'); */
 //TODO... fix path...
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-module.exports = function (config, src, dst) {
+export default function (config, src, dst) {
 
 	/*
 	let css_purge = {

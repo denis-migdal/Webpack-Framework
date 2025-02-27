@@ -1,14 +1,10 @@
-let RULES = require('./src/rules');
-const fs  = require('fs');
+import skeleton from './src/skeleton.js';
+import fs    from 'fs';
 
-/*let BUILDERS = require('./src/builders.js');
-
-let WebPage = require('./src/WebPage.js');*/
-
-const skeleton = require('./src/skeleton');
+import * as RULES from './src/rules/index.js';
 const rules = [RULES.Typescript, RULES.Images, RULES.CSS, RULES.HTML, RULES.Markdown]; //TODO: auto build.
 
-function buildConfigs(src, dst, alias) { //TODO: multiple named target.
+export default function buildConfigs(src, dst, alias) { //TODO: multiple named target.
 
     return (env, args) => {
 
@@ -35,10 +31,8 @@ function buildConfigs(src, dst, alias) { //TODO: multiple named target.
         //console.warn(config);
         //console.log(JSON.stringify(config, null, "\t"));
 
+        console.warn(config);
+
         return config;
     }
 }
-
-module.exports = {
-	buildConfigs
-};

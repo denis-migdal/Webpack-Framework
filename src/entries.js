@@ -1,6 +1,6 @@
-const {glob, globSync} = require('glob');
+import {glob, globSync} from 'glob';
 
-module.exports = function(src) {
+export default function(src) {
 
     return async () => {
 
@@ -34,7 +34,7 @@ module.exports = function(src) {
                 import: [ lib ],
                 library: {
                     //name: entry_name.slice(5),
-                    type: "module" // "umd" - "modern-module" (doesn't work)
+                    type: "module", // ""modern-module"
                 }
             };
 

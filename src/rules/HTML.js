@@ -1,4 +1,4 @@
-module.exports = function(config, src) {
+export default function(config, src) {
 
 	config.module.rules.push({
 		test: /\.html$/,

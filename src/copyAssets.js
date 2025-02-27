@@ -1,7 +1,7 @@
 // Only works with npm run (why ???)
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
-module.exports = function(config, list) {
+export default function(config, list) {
 
 	if( list.length === 0)
 		return config;

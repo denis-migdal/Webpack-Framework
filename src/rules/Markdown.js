@@ -1,8 +1,8 @@
 // highlight
-const { markedHighlight } = require("marked-highlight");
-const hljs = require('highlight.js');
+import { markedHighlight } from "marked-highlight";
+import hljs from 'highlight.js';
 
-module.exports = function(config, src) {
+export default function(config, src) {
 
 	config.module.rules.push({
 		test: /\.md$/,

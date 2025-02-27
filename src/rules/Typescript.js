@@ -1,7 +1,7 @@
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
+import ForkTsCheckerWebpackPlugin         from 'fork-ts-checker-webpack-plugin';
+import ForkTsCheckerNotifierWebpackPlugin from 'fork-ts-checker-notifier-webpack-plugin';
 
-module.exports = function(config, src, _, {ROOT, alias}) {
+export default function(config, src, _, {ROOT, alias}) {
 
 	config.module.rules.push({
 		test: /\.tsx?$/,

@@ -1,10 +1,12 @@
-const copyAssets = require('./copyAssets');
-const pageEntries = require('./entries');
+import copyAssets  from './copyAssets.js';
+import pageEntries from './entries.js';
+
+//import { library } from 'webpack';
 //const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 //const genCoreModuleList  = require('./genCoreModuleList');
 //const genCoreRuntimeList = require('./genCoreRuntimeList');
 
-module.exports = function (src, dst, rules = [], options = {}) {
+export default function (src, dst, rules = [], options = {}) {
 
 	let {assets} = options;
 
@@ -19,7 +21,8 @@ module.exports = function (src, dst, rules = [], options = {}) {
 		output: {
 			path: `${ROOT}/${dst}`,
 			publicPath: '',
-			enabledLibraryTypes: ["module", "modern-module", "umd"],
+			module: true,
+			enabledLibraryTypes: ["module", "modern-module"],
 			clean: {
 				//dry: true
 			},
@@ -56,7 +59,7 @@ module.exports = function (src, dst, rules = [], options = {}) {
 		},
 		optimization: {
 			providedExports: false // else causes issues...
-		}
+		},
 	};
 
 	for(let rule of rules)

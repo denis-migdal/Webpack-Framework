@@ -1,4 +1,4 @@
-module.exports = function(config, src, dst) {
+export default function(config, src, dst) {
 
 	config.module.rules.push({
 		test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2|wasm)$/,
