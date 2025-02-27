@@ -58,7 +58,8 @@ export default function (src, dst, rules = [], options = {}) {
  			"errorDetails": true
 		},
 		optimization: {
-			providedExports: false // else causes issues...
+			concatenateModules: false,
+			//providedExports: false // issues in production ?
 		},
 	};
 
