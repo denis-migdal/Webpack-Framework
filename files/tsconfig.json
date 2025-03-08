@@ -1,22 +1,18 @@
 {
     "include": ["src"],
+    "exclude": ["src/tests"],
     "compilerOptions": {
-        "rootDir": ".",
-        "outDir": "./dist/",
-        "baseUrl": "./",
-        "paths": {
-        "*": ["src/*", "libs/*"]
-        },
+        "outDir": "./build/TS",
+        "paths": {},
         "sourceMap": true,
         "alwaysStrict": true,
-
         "strict": true,
         "noErrorTruncation": true,
         "exactOptionalPropertyTypes": true,
         "noFallthroughCasesInSwitch": true,
         "noImplicitOverride": true,
         "noImplicitReturns": true,
-        "allowImportingTsExtensions": true,
+        "allowSyntheticDefaultImports": true,
 
         "module": "esnext",
         "target": "esnext",

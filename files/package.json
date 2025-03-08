@@ -2,13 +2,15 @@
     "name": "[PROJECT_NAME]",
     "version": "1.0.0",
     "description": "[PROJECT_DESC]",
+    "type"       : "module",
     "repository": {
         "type": "git",
         "url": "git+[PROJECT_REPOSITORY]"
     },
     "scripts": {
-      "build": "clear ; webpack --no-watch --mode=development",
-      "watch": "clear ; webpack --watch    --mode=development"
+        "build"     : "clear ; webpack --no-watch --mode=development",
+        "build-prod": "clear ; webpack --no-watch --mode=production",
+        "watch"     : "clear ; webpack --watch    --mode=development"
     },
     "author": "[AUTHOR]",
     "license": "[LICENCE]",

@@ -45,29 +45,17 @@ export function markdownLoader(markdown) {
 }
 ```
 
-
 ### Configuration
 
-Webpack is configured through `webpack.config.js`. You can easily use WebpackFramework default configuration:
+Webpack is configured through `webpack.config.js`.
 
-```javascript
-const WF = require("./build/WebpackFramework");
-
-module.exports = (env, argv) => WF.buildConfigs();
-```
-
-⚠ For now, WebpackFramework only supports this default configuration. `WF.buildConfigs()` should be extended in the future to allow for more configuration options.
+[TODO] config
 
 ## Projects using WebpackFramework
 
 ### My projects
 
-- https://github.com/denis-migdal/WebSlides/tree/master/example
-
-## Known bugs
-
-- [ ] in some projects, /dist/src junks are generated, dunno why.
-
+[TODO] update
 
 ## TODOLIST
 
