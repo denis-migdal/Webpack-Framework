@@ -40,18 +40,7 @@ export default function (src, dst, rules = [], options = {}) {
 		//watch: WATCH, no needs (--watch / --no-watch)
 		watchOptions: {
 			ignored: [	'**/node_modules',
-						'**/.git'
-                        /*
-						`${__dirname}/../build`,
-						`${__dirname}/../dist`,
-						`${__dirname}/../doc`,
-						`${__dirname}/../.gitignore`,
-						`${__dirname}/../.gitmodules`,
-						`${__dirname}/../package-lock.json`,
-						`${__dirname}/../package.json`,
-						`${__dirname}/../README.md`,
-						`${__dirname}/../tsconfig.json`,
-						`${__dirname}/../webpack.config.js`*/]
+						'**/.git' ]
 		},
 		devtool: "source-map", //"source-map"
 		stats: {
