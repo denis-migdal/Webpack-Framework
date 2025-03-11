@@ -8,7 +8,8 @@ export default function(src) {
 
         // main entry (TODO: remove/rename?)
         const main_files = await glob(`${src}/index.*`, {dotRelative: true});
-        entries.main = main_files;
+        if(main_files.length)
+            entries.main = main_files;
 
         // pages entries
         const files = await glob(src + '/pages/**/index.*', {dotRelative: true});   
