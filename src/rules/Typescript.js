@@ -7,8 +7,8 @@ export default function(config, src, _, {ROOT, alias}) {
 		test: /\.tsx?$/,
 		use: [{
 				// awesome-typescript-loader ?
-				loader: 'swc-loader',
 				//loader: 'ts-loader',
+				loader: 'swc-loader',
 				options: {
 					jsc: {
 						"target": "esnext",

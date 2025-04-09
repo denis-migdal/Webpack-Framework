@@ -22,11 +22,11 @@ export default function (src, dst, rules = [], options = {}) {
 			path: `${ROOT}/${dst}`,
 			publicPath: '',
 			module: true,
-			enabledLibraryTypes: ["module", "modern-module"],
+			// modern-module causes issue in dev mode with concat true
+			enabledLibraryTypes: ["module"],
 			clean: {
 				//dry: true
 			},
-			compareBeforeEmit: true
 		},
 		target: "web",
         plugins: [/*{
@@ -47,7 +47,7 @@ export default function (src, dst, rules = [], options = {}) {
  			"errorDetails": true
 		},
 		optimization: {
-			concatenateModules: false,
+			//concatenateModules: false,
 			//providedExports: false // issues in production ?
 		},
 	};
