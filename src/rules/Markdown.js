@@ -20,8 +20,27 @@ export default function(config, src) {
             {
                 loader: "markdown-loader",
                 options: { // https://marked.js.org/using_advanced#options
-                    options: {},
+                    options: {
+                    },
                     extensions: [
+                        {
+                            name: "disable block",
+                            renderer: {
+                                paragraph(args) {
+                                    if( args[0] === " " || args[0] === "<")
+                                        return args + "\n";
+                                    return false;
+                                }
+                            },
+                            tokenizer: {
+                                code(src) {
+                                    return null;
+                                },
+                                url(src) {
+                                    return null;
+                                }
+                            }
+                        },
                         markedHighlight({
                             langPrefix: 'hljs language-',
                             highlight(code, lang, info) {
