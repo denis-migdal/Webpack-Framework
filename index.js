@@ -1,4 +1,5 @@
 import skeleton from './src/skeleton.js';
+import {glob, globSync} from 'glob';
 import fs    from 'fs';
 
 import * as RULES from './src/rules/index.js';
@@ -14,6 +15,11 @@ export default function buildConfigs(src, dst, alias) { //TODO: multiple named t
         dst = dst.replaceAll("${version}", version);
 
         const assets = [];
+
+        const res = globSync(src + '/pages/**/assets/*', {dotRelative: true});
+        for(let i = 0; i < res.length; ++i)
+            assets.push([res[i], "./" + res[i].slice(`${src}/pages`.length) ]);
+
         if( fs.existsSync(`${src}/assets`) )
             assets.push([`${src}/assets`, "./assets"]);
 
@@ -30,8 +36,6 @@ export default function buildConfigs(src, dst, alias) { //TODO: multiple named t
 
         //console.warn(config);
         //console.log(JSON.stringify(config, null, "\t"));
-
-        console.warn(config);
 
         return config;
     }
