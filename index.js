@@ -34,8 +34,8 @@ export default function buildConfigs(src, dst, alias) { //TODO: multiple named t
             alias
         });
 
-        //console.warn(config);
         //console.log(JSON.stringify(config, null, "\t"));
+        //config.entry().then( (e) => { console.warn(e) } )
 
         return config;
     }

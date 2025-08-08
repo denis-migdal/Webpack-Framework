@@ -1,4 +1,5 @@
 import {glob, globSync} from 'glob';
+import fs from 'fs';
 
 export default function(src) {
 
@@ -18,11 +19,23 @@ export default function(src) {
             const entry_name = file.slice(src.length + 6, file.lastIndexOf('/') );
 
             let entry = entries[entry_name];
-            if(entry === undefined) {
+            if(entry === undefined)
                 entry = entries[entry_name]= { import: []};
-                if( ! entry_name.startsWith("skeleton") )
-                    entry.dependOn = ["skeleton"]
+
+            const isSkeleton = entry_name.startsWith("skeleton");
+            const isWebPage  = file.endsWith('.html') || file.endsWith('.md');
+            
+            if( isWebPage && ! isSkeleton) {
+
+                //let dependsOn = "skeleton"; // default.
+                const content = fs.readFileSync(file, {encoding: "utf8"});
+                
+                const r = content.match(/src="\/(skeleton\/(.*))index.js"/)[1]
+                                 .slice(0,-1);
+                
+                entry.dependOn = [r];
             }
+
             entry.import.push(file);
         }
 
