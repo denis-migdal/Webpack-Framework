@@ -13,7 +13,8 @@ export default function(src) {
             entries.main = main_files;
 
         // pages entries
-        const files = await glob(src + '/pages/**/index.[^\.]*$', {dotRelative: true});
+        const files = await glob(src + '/pages/**/index.{ts,html,md,css}', {dotRelative: true});
+
         for(let file of files) {
 
             const entry_name = file.slice(src.length + 6, file.lastIndexOf('/') );
