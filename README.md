@@ -22,6 +22,8 @@
    `./build/WebpackFramework/init.sh`
 4. Complete informations in `package.json`.<br/>
 
+⚠ May need to npm update
+
 ⚠ markdown-loader is currently bugged, `markdown-loader/src/loader.js` needs to be :
 
 ```javascript
