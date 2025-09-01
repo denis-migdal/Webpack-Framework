@@ -24,6 +24,8 @@
 
 ⚠ May need to npm update
 
+⚠ .vscode + .github missing
+
 ⚠ markdown-loader is currently bugged, `markdown-loader/src/loader.js` needs to be :
 
 ```javascript
