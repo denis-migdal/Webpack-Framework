@@ -31,10 +31,11 @@ export default function(src) {
                 //let dependsOn = "skeleton"; // default.
                 const content = fs.readFileSync(file, {encoding: "utf8"});
                 
-                const r = content.match(/src="\/(skeleton\/(.*))index.js"/)[1]
-                                 .slice(0,-1);
-                
-                entry.dependOn = [r];
+                const found = content.match(/src="\/(skeleton\/(.*))index.js"/);
+                if( found !== null) {
+                    const r = found[1].slice(0,-1);
+                    entry.dependOn = [r];
+                }
             }
 
             entry.import.push(file);
