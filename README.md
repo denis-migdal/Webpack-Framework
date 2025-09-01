@@ -22,7 +22,7 @@
    `./build/WebpackFramework/init.sh`
 4. Complete informations in `package.json`.<br/>
 
-⚠ May need to npm update
+⚠ May need to npm update ( npm install @swc/core )
 
 ⚠ .vscode + .github missing
 
